@@ -15,15 +15,16 @@
     <header>
         <nav class="teal">
             <div class="nav-wrapper">
-                <div class="input-field search-field">
+                <div class="input-field search-field ">
                     <input id="search" type="search" placeholder="Busca algún evento de tu interés" class="search white-text" required>
-                    <label class="label-icon" for="search"><i class="material-icons white-text">search</i></label>
+                    <label class="label-icon" for="search"><i class="material-icons white-text ">search</i></label>
                 </div>
                 <ul class="right">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <!-- Dropdown Trigger -->
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a href="sass.html">Iniciar Sesión</a></li>
+                    <li><a href="badges.html">Registrarme</a></li>
+                    <li><a> </a></li>
+                    <!-- Dropdown Trigger 
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>-->
                 </ul>
             </div>
         </nav>
@@ -33,8 +34,8 @@
                 <div class="background">
                 <img src="img/tab.png">
                 </div>
-                <a href="#user"><img class="circle" src="img/icon.png"></a>
-                <a href="#name"><span class="white-text name">John Doe</span></a>
+                <a href="#user"><img class="circle" src="img/icon.png"></a><h4>
+                
                 <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                 </div>
             </li>
@@ -42,9 +43,8 @@
             <li><a href="#!">Second Link</a></li>
             <li><div class="divider"></div></li>
             <li><a class="subheader">Subheader</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+            <li><a class="waves-effect" href="">Third Link With Waves</a></li>
         </ul>
-     
     </header>
 
     <main>

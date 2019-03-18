@@ -35,7 +35,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END: Custom CSS-->
   </head>
   <!-- END: Head-->
-  <body class="vertical-layout page-header-light vertical-menu-collapsible vertical-menu-nav-dark 1-column login-bg  blank-page blank-page" data-open="click" data-menu="vertical-menu-nav-dark" data-col="1-column">
+  <body class="vertical-layout page-header-light vertical-menu-collapsible vertical-menu-nav-dark 1-column login-bg blank-page" data-open="click" data-menu="vertical-menu-nav-dark" data-col="1-column">
     <div class="row">
       <div class="col s12">
         <div class="container"><div id="login-page" class="row">
@@ -57,7 +57,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="input-field col s12">
           <i class="material-icons prefix pt-2">lock_outline</i>
           <input id="password" type="password">
-          <label for="password">Password</label>
+          <label for="password" class="">Password</label>
         </div>
       </div>
       <div class="row">

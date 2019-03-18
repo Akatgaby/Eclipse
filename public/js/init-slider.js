@@ -2,6 +2,6 @@
     $('.slider').slider({
         indicators: false,
         height: 300,
-        interval: 2200
+        interval: 2500
     });
   });

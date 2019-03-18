@@ -32,7 +32,10 @@ header, main, footer {
   }
 }
 
-.input-field input[type=search]:focus:not(.browser-default) {
+.input-field input[type=search]:not(.browser-default) {
   background: #26a69a;
-  
+}
+
+.input-field input[type=search]:focus:not(.browser-default) {
+  background: #4db6ac;
 }
