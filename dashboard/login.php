@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/login/materialize.css">
     <!-- TAMAÑO DEL FORMULARIO -->
     <link rel="stylesheet" type="text/css" href="css/login/style.css">
-    <!-- LUGAR DEL FORMULARIO -->
+    <!-- POSICIÓN Y BG -->
     <link rel="stylesheet" type="text/css" href="css/login/login.css">
   </head>
   <!-- END: Head-->
@@ -73,12 +73,12 @@
                 </div>
                 <div class="row">
                   <div class="input-field col s12">
-                    <a href="#" class="btn waves-effect waves-light border-round black col s12">ENTRAR</a>
+                    <a href="homeviews/index.php" class="btn waves-effect waves-light border-round black col s12">ENTRAR</a>
                   </div>
                 </div>
                 <div class="row center">
                   <div class="input-field col s12">
-                    <p class="margin medium-small"><a href="#">Olvidé mi contraseña</a></p>
+                    <p class="margin medium-small"><a href="forgot.php">Olvidé mi contraseña</a></p>
                   </div>
                 </div>
               </form>
@@ -87,8 +87,9 @@
         </div>
       </div>
     </div>
+  </body>
 
     <!-- PLUGIN VENDOR: Funciona para los textarea dinámicos. -->
     <script src="js/vendors.js" type="text/javascript"></script>
   
-</body></html>
+</html>
