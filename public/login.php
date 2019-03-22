@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="login_files/vendors.css">
     <link type="text/css" rel="stylesheet" href="css/icon.css">
     <!-- Referencias para la navbar. -->
-    <link type="text/css" rel="stylesheet" href="./css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="css/material-icons.css">
     <link type="text/css" rel="stylesheet" href="./css/init.css">
   </head>
@@ -21,11 +21,18 @@
 
     <header>
       <nav class="teal">
-              <div class="nav-wrapper">
-                <a></a>
-                <a href="#" class="brand-logo">Distribuidora Illusion</a>
-              </div>
-          </nav>
+        <div class="brand-sidebar">
+          <h1 class="logo-wrapper">
+            <a class="brand-logo darken-1" href="">
+              <img src="img/" alt="materialize logo">
+              <span class="logo-text hide-on-med-and-down">olaaaaaa</span>
+            </a>
+            <a class="navbar-toggler" href="#">
+              <i class="material-icons">radio_button_checked</i>
+            </a>
+          </h1>
+        </div>
+      </nav>
     </header>
 
     <div class="row">

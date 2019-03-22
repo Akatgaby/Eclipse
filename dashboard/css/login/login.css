@@ -1,9 +1,6 @@
-/*----------------------------------------
-    Login Page
-------------------------------------------*/
 .login-bg
 {
-    background-image: url('../../images/gallery/flat-bg.jpg');
+    background-image: url('../../img/BG.jpg');
     background-repeat: no-repeat;
     -webkit-background-size: cover;
             background-size: cover;
