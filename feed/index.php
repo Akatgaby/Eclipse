@@ -6,7 +6,7 @@
         <!-- CARACTERES ESPECIALES -->
         <meta charset="UTF-8">
         <!-- TÍTULO DE LA VENTANA -->
-        <title>Distribuidora Illusion | Iniciar Sesión</title>
+        <title>Distribuidora Illussion | Iniciar Sesión</title>
         <!-- ÍCONO DE LA VENTANA -->
         <link rel="shortcut icon" type="image/x-icon" href="../files/img/ico.png">
         <!-- MATERIAL ICONS -->
@@ -27,7 +27,7 @@
                     <h1 class="logo-wrapper">
                         <a class="brand-logo center">
                             <img src="../files/img/ico.png" alt="ico-illusion">
-                            <span class="white-text">Distribuidora Illusion</span>
+                            <span class="white-text">Illussion Party Supplies</span>
                         </a>
                     </h1>
                 </div>
