@@ -13,36 +13,36 @@
         <link rel="stylesheet" type="text/css" href="../files/css/material-icons.css">
         <!-- MATERIALIZE.MIN -->
         <link rel="stylesheet" type="text/css" href="../files/css/materialize.min.css">
-        <!-- TAMAÑO Y FUENTE -->
-        <link rel="stylesheet" type="text/css" href="../files/css/style.css">
+        <!-- FUENTE -->
+        <link rel="stylesheet" type="text/css" href="../files/css/font.css">
         <!-- ESTILO -->
-        <link rel="stylesheet" type="text/css" href="../files/css/page.css">
+        <link rel="stylesheet" type="text/css" href="../files/css/style.css">
         <!-- END: Head-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
+    
     <!-- BEGIN: Navbar -->
         <header>
             <nav class="black">
                 <div class="brand-sidebar black">
-                    <h1 class="logo-wrapper">
-                        <a class="brand-logo center">
-                            <img src="../files/img/ico.png" alt="ico-illusion">
-                            <span class="white-text">Illussion Party Supplies</span>
-                        </a>
-                    </h1>
+                    <a class="brand-logo center">
+                        <img src="../files/img/ico.png" alt="ico-illusion" height="25">
+                        <span class="white-text">Illussion Party Supplies</span>
+                    </a>
                 </div>
             </nav>
         </header>
     <!-- END: Navbar -->
+
     <body class="Aki">
         <div class="row">
             <div class="col s12">
                 <div id="LoginStyle">
                     <div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 Card">
                         <form method="post" id="login-form">
-                            <div class="row">
+                            <div class="row margin">
                                 <div class="input-field col s12">
-                                    <h5 class="ml-4">Iniciar Sesión</h5>
+                                    <h5>Iniciar Sesión</h5>
                                 </div>
                             </div>
                             <div class="row margin">
@@ -59,13 +59,13 @@
                                     <label for="password">Contraseña</label>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row margin">
                                 <div class="input-field col s12">
                                     <button type="submit" class="btn waves-effect waves-light black col s12 border-round tooltipped"
                                     data-tooltip="Ingresar">Entrar</button>
                                 </div>
                             </div>
-                            <div class="row center">
+                            <div class="row margin center">
                                 <div class="input-field col s12">
                                     <p class="margin medium-small"><a href="forget.php">Olvidé mi contraseña</a></p>
                                 </div>

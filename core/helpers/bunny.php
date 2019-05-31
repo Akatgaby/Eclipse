@@ -18,7 +18,7 @@ class Database
     private function connect()
     {
         $server = 'localhost';
-        $database = 'illusion';
+        $database = 'illussion';
         $username = 'root';
         $password = '';
         try {
