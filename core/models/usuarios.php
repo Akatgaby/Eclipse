@@ -103,11 +103,11 @@ class Usuarios extends Validator
 	// Métodos para manejar la sesión del usuario
 	public function checkAlias()
 	{
-		$sql = 'SELECT id_usuario FROM usuarios WHERE alias_usuario = ?';
+		$sql = 'SELECT user_id FROM table_users WHERE user_name = ?';
 		$params = array($this->alias);
 		$data = Database::getRow($sql, $params);
 		if ($data) {
-			$this->id = $data['id_usuario'];
+			$this->id = $data['user_id'];
 			return true;
 		} else {
 			return false;
@@ -116,10 +116,12 @@ class Usuarios extends Validator
 
 	public function checkPassword()
 	{
-		$sql = 'SELECT clave_usuario FROM usuarios WHERE id_usuario = ?';
+		$sql = 'SELECT pass_word, name_adm, last_name FROM table_users WHERE user_id = ?';
 		$params = array($this->id);
 		$data = Database::getRow($sql, $params);
-		if (password_verify($this->clave, $data['clave_usuario'])) {
+		if (password_verify($this->clave, $data['pass_word'])) {
+			$this->nombres=$data['name_adm'];
+			$this->apellidos=$data['last_name'];
 			return true;
 		} else {
 			return false;
@@ -129,7 +131,7 @@ class Usuarios extends Validator
 	public function changePassword()
 	{
 		$hash = password_hash($this->clave, PASSWORD_DEFAULT);
-		$sql = 'UPDATE usuarios SET clave_usuario = ? WHERE id_usuario = ?';
+		$sql = 'UPDATE table_users SET pass_word = ? WHERE user_id = ?';
 		$params = array($hash, $this->id);
 		return Database::executeRow($sql, $params);
 	}
@@ -137,14 +139,14 @@ class Usuarios extends Validator
 	// Metodos para manejar el SCRUD
 	public function readUsuarios()
 	{
-		$sql = 'SELECT id_usuario, nombres_usuario, apellidos_usuario, correo_usuario, alias_usuario FROM usuarios ORDER BY apellidos_usuario';
+		$sql = 'SELECT user_id, name_adm, last_name, e_mail, user_name FROM table_users ORDER BY last_name';
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
 
 	public function searchUsuarios($value)
 	{
-		$sql = 'SELECT id_usuario, nombres_usuario, apellidos_usuario, correo_usuario, alias_usuario FROM usuarios WHERE apellidos_usuario LIKE ? OR nombres_usuario LIKE ? ORDER BY apellidos_usuario';
+		$sql = 'SELECT user_id, name_adm, last_name, e_mail, user_name FROM table_users WHERE last_name LIKE ? OR name_adm LIKE ? ORDER BY last_name';
 		$params = array("%$value%", "%$value%");
 		return Database::getRows($sql, $params);
 	}
@@ -152,28 +154,28 @@ class Usuarios extends Validator
 	public function createUsuario()
 	{
 		$hash = password_hash($this->clave, PASSWORD_DEFAULT);
-		$sql = 'INSERT INTO usuarios(nombres_usuario, apellidos_usuario, correo_usuario, alias_usuario, clave_usuario) VALUES(?, ?, ?, ?, ?)';
+		$sql = 'INSERT INTO table_users(name_adm, last_name, e_mail, user_name, pass_word) VALUES(?, ?, ?, ?, ?)';
 		$params = array($this->nombres, $this->apellidos, $this->correo, $this->alias, $hash);
 		return Database::executeRow($sql, $params);
 	}
 
 	public function getUsuario()
 	{
-		$sql = 'SELECT id_usuario, nombres_usuario, apellidos_usuario, correo_usuario, alias_usuario FROM usuarios WHERE id_usuario = ?';
+		$sql = 'SELECT user_id, name_adm, last_name, e_mail, user_name FROM table_users WHERE user_id = ?';
 		$params = array($this->id);
 		return Database::getRow($sql, $params);
 	}
 
 	public function updateUsuario()
 	{
-		$sql = 'UPDATE usuarios SET nombres_usuario = ?, apellidos_usuario = ?, correo_usuario = ?, alias_usuario = ? WHERE id_usuario = ?';
+		$sql = 'UPDATE table_users SET name_adm = ?, last_name = ?, e_mail = ?, user_name = ? WHERE user_id = ?';
 		$params = array($this->nombres, $this->apellidos, $this->correo, $this->alias, $this->id);
 		return Database::executeRow($sql, $params);
 	}
 
 	public function deleteUsuario()
 	{
-		$sql = 'DELETE FROM usuarios WHERE id_usuario = ?';
+		$sql = 'DELETE FROM table_users WHERE user_id = ?';
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
