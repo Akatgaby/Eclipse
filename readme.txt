@@ -4,7 +4,7 @@ Esta demo ha sido desarrollada con las siguientes herramientas:
 - jQuery v3.2.1
 
 Inicio del sitio privado:
-    localhost/coffeeshop/views/dashboard/
+    localhost/eclipse/views/dashboard/
 
 Inicio del sitio público:
-    localhost/coffeeshop/views/commerce/
+    localhost/eclipse/views/feed/
