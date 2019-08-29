@@ -7,4 +7,4 @@ Inicio del sitio privado:
     localhost/eclipse/views/dashboard/
 
 Inicio del sitio público:
-    localhost/eclipse/views/feed/
+    localhost/eclipse/views
