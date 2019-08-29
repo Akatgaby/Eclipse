@@ -1,11 +1,10 @@
-var tryx = 0;
 $(document).ready(function()
 {
     checkUsuarios();
 })
 
 // Constante para establecer la ruta y parámetros de comunicación con la API
-const api = '../../core/api/dashboard/usuarios.php?action=';
+const api = '../../core/api/feed/usuarios.php?action=';
 
 // Función para verificar si existen usuarios en el sitio privado
 function checkUsuarios()
@@ -20,10 +19,6 @@ function checkUsuarios()
         // Se verifica si la respuesta de la API es una cadena JSON, sino se muestra el resultado en consola
         if (isJSONString(response)) {
             const dataset = JSON.parse(response);
-            // Se comprueba que no hay usuarios registrados para redireccionar al registro del primer usuario
-            if (!dataset.status) {
-                sweetAlert(3, dataset.message, 'register.php');
-            }
         } else {
             console.log(response);
         }
@@ -35,18 +30,13 @@ function checkUsuarios()
 }
 
 // Función para validar el usuario al momento de iniciar sesión
-$('#form-sesion').submit(function()
+$('#form-register').submit(function()
 {
-    var data = { 
-        alias: alias.validate,
-        clave: clave.validate,
-        intentos:tryx
-    }
     event.preventDefault();
     $.ajax({
-        url: api + 'login',
+        url: api + 'register',
         type: 'post',
-        data: $('#form-sesion').serialize(),
+        data: $('#form-register').serialize(),
         datatype: 'json'
     })
     .done(function(response){
@@ -55,10 +45,9 @@ $('#form-sesion').submit(function()
             const dataset = JSON.parse(response);
             // Se comprueba si la respuesta es satisfactoria, sino se muestra la excepción
             if (dataset.status) {
-                sweetAlert(1, dataset.message, 'main.php');
+                sweetAlert(1, dataset.message, 'index.php');
             } else {
                 sweetAlert(2, dataset.exception, null);
-                tryx++;
             }
         } else {
             console.log(response);
@@ -68,4 +57,4 @@ $('#form-sesion').submit(function()
         // Se muestran en consola los posibles errores de la solicitud AJAX
         console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
     });
-})
+});

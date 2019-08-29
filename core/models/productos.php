@@ -3,13 +3,13 @@ class Productos extends Validator
 {
 	// Declaración de propiedades
 	private $id = null;
-	private $nombre = null;
+	private $planta = null;
 	private $descripcion = null;
 	private $precio = null;
 	private $imagen = null;
-	private $categoria = null;
-	private $estado = null;
+	private $cantidad = null;
 	private $maceta = null;
+	private $categoria = null;
 	private $ruta = '../../../resources/img/files/';
 
 	// Métodos para sobrecarga de propiedades
@@ -28,19 +28,19 @@ class Productos extends Validator
 		return $this->id;
 	}
 
-	public function setNombre($value)
+	public function setPlanta($value)
 	{
 		if ($this->validateAlphanumeric($value, 1, 50)) {
-			$this->nombre = $value;
+			$this->planta = $value;
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-	public function getNombre()
+	public function getPlanta()
 	{
-		return $this->nombre;
+		return $this->planta;
 	}
 
 	public function setDescripcion($value)
@@ -103,19 +103,19 @@ class Productos extends Validator
 		return $this->categoria;
 	}
 
-	public function setEstado($value)
+	public function setCantidad($value)
 	{
 		if ($this->validateAlphanumeric($value, 1, 50)) {
-			$this->estado = $value;
+			$this->cantidad = $value;
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-	public function getEstado()
+	public function getCantidad()
 	{
-		return $this->estado;
+		return $this->cantidad;
 	}
 
 		public function setMaceta($value)

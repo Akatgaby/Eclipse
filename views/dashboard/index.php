@@ -17,14 +17,14 @@ Dashboard::headerTemplate('Iniciar sesión');
                         <div class="row margin">
                             <div class="input-field col s12">
                                 <i class="material-icons black-text prefix pt-2">person_outline</i>
-                                <input id="alias" type="text" name="alias" class="validate" required/>
+                                <input id="alias" type="text" name="alias" class="validate" autocomplete="off" required/>
                                 <label for="alias">Nombre de usuario</label>
                             </div>
                         </div>
                         <div class="row margin">
                             <div class="input-field col s12">
                                 <i class="material-icons black-text prefix pt-2">lock_outline</i>
-                                <input id="clave" type="password" name="clave" class="validate" required/>
+                                <input id="clave" type="password" name="clave" class="validate" autocomplete="off" required/>
                                 <label for="clave">Contraseña</label>
                             </div>
                         </div>
@@ -35,7 +35,7 @@ Dashboard::headerTemplate('Iniciar sesión');
                         </div>
                         <div class="row margin center">
                             <div class="input-field col s12">
-                                <p class="margin medium-small"><a href="forget.php">Olvidé mi contraseña</a></p>
+                                <p class="margin medium-small"><a href="../security/password.php">Olvidé mi contraseña</a></p>
                             </div>
                         </div>
                     </form>

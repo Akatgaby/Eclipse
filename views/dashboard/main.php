@@ -7,7 +7,7 @@ Dashboard::headerTemplate('Bienvenido');
 </div>
 <!-- BEGIN: Carousel -->
 
-        <h6 class="center-align black-text">Presione el botón verde de la esquina para consultar los reportes y gráficos.</h6>
+        <h6 class="center-align black-text">Presione el botón verde de la esquina para consultar las estadísticas del sistema.</h6>
         <div class="carousel">
             <a class="carousel-item" href="#one!"><img src="../../resources/img/flowers/O1.jpg"></a>
             <a class="carousel-item" href="#two!"><img src="../../resources/img/flowers/O2.jpg"></a>

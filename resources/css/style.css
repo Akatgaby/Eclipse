@@ -4,6 +4,12 @@
     background-repeat: no-repeat;
 }
 
+.AkiZwg
+{
+    background-image: url('../img/publicBG.jpg');
+    background-repeat: repeat;
+}
+
 #LoginStyle
 {
     display: flex;
