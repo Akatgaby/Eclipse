@@ -6,7 +6,7 @@ require_once('../../models/clients.php');
 //Se comprueba si existe una acción a realizar, de lo contrario se muestra un mensaje de error
 if (isset($_GET['action'])) {
     session_start();
-    $usuario = new Usuarios;
+    $usuario = new Clients;
     $errorLog = 0;
     $result = array('status' => 0, 'message' => null, 'exception' => null);
     //Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
@@ -14,9 +14,9 @@ if (isset($_GET['action'])) {
         switch ($_GET['action']) {
             case 'logout':
                 if (session_destroy()) {
-                    header('location: ../../../views/dashboard/');
+                    header('location: ../../../views/feed/');
                 } else {
-                    header('location: ../../../views/dashboard/main.php');
+                    header('location: ../../../views/feed/main.php');
                 }
                 break;
             case 'readProfile':
@@ -281,7 +281,6 @@ if (isset($_GET['action'])) {
                                 $result['message'] = 'Autenticación correcta';
                             } else {
                                 $result['exception'] = 'Clave inexistente';
-                                $_SESSION['Try'] = $errorLog = $errorLog + 1;
                             }
                         } else {
                             $result['exception'] = 'Clave menor a 6 caracteres';

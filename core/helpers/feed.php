@@ -36,7 +36,7 @@ class Feed
 		// Se comprueba si existe una sesión para mostrar el menú de opciones, de lo contrario se muestra un menú vacío
 		if (isset($_SESSION['idUsuario'])) {
 			//Tiempo en segundos para dar vida a la sesión.
-			$inactivo = 300; // Fórmula para obtener segundos (min * 60)
+			$inactivo = 60; // Fórmula para obtener segundos (min * 60)
 			//Calculamos tiempo de vida inactivo.
 			$vida_session = time() - $_SESSION['tiempo'];
 			//Compraración para redirigir página, si la vida de sesión sea mayor a el tiempo insertado en inactivo.
@@ -54,11 +54,11 @@ class Feed
 				print('
 					<header>
 						<div class="navbar-fixed">
-							<nav class="black">
+							<nav class="white black-text">
 								<div class="brand-sidebar black">
 									<a class="brand-logo">
 										<img src="../../resources/img/ico.png" alt="ico-illusion" height="25">
-										<span class="white-text">Eclipse</span>
+										<span class="black-text">Eclipse</span>
 									</a>
 								</div>
 								<div class="nav-wrapper">
@@ -99,7 +99,7 @@ class Feed
 				if ($filename != 'main.php') {
 					print('<h3 class="center-align">' . $title . '</h3>');
 				} else {
-					print('<h3 class="center-align">Bienvenidx de vuelta ' . $_SESSION['Nombre'] . '.</h3>');
+					print('<h3 class="center-align">Bienvenido de vuelta, cliente ' . $_SESSION['Nombre'] . '.</h3>');
 				}
 			} else {
 				header('location: main.php');
@@ -110,28 +110,28 @@ class Feed
 				header('location: index.php');
 			} else {
 				print('
-				<!-- BEGIN: Navbar -->
-				<header>
-					<div class="navbar-fixed">
-						<nav class="white">
-							<div class="brand-sidebar black">
-								<a class="brand-logo center">
-									<img src="../../resources/img/ico.png" alt="ico-illusion" height="25">
-									<span class="black-text">Eclipse</span>
-								</a>
-								<ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li>
-                                <a class="black-text" href="register.php">Registrate</a>
-                            </li>
-                            <li>
-                                <a class="black-text" href="index.php">Inicia sesión</a>
-                            </li>
-                        </ul>
+					<!-- BEGIN: Navbar -->
+						<header>
+							<div class="navbar-fixed">
+								<nav class="white">
+									<div class="brand-sidebar black">
+										<a class="brand-logo center" href="../index.php">
+											<img src="../../resources/img/ico.png" alt="ico-illusion" height="25">
+											<span class="black-text">Eclipse</span>
+										</a>
+										<ul id="nav-mobile" class="right hide-on-med-and-down">
+									<li>
+										<a class="black-text" href="register.php">Registrate</a>
+									</li>
+									<li>
+										<a class="black-text" href="index.php">Inicia sesión</a>
+									</li>
+								</ul>
+									</div>
+								</nav>
 							</div>
-						</nav>
-					</div>
-				</header>
-			<!-- END: Navbar -->
+						</header>
+					<!-- END: Navbar -->
 				');
 			}
 		}

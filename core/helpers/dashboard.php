@@ -7,7 +7,6 @@ class Dashboard
 	public static function headerTemplate($title)
 	{
 		session_start();
-
 		ini_set('date.timezone', 'America/El_Salvador');
 		print('
 		<!DOCTYPE html>
@@ -36,7 +35,7 @@ class Dashboard
 		// Se comprueba si existe una sesión para mostrar el menú de opciones, de lo contrario se muestra un menú vacío
 		if (isset($_SESSION['idUsuario'])) {
 			//Tiempo en segundos para dar vida a la sesión.
-			$inactivo = 300; // Fórmula para obtener segundos (min * 60)
+			$inactivo = 1200; // Fórmula para obtener segundos (min * 60)
 			//Calculamos tiempo de vida inactivo.
 			$vida_session = time() - $_SESSION['tiempo'];
 			//Compraración para redirigir página, si la vida de sesión sea mayor a el tiempo insertado en inactivo.

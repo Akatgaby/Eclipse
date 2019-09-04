@@ -18,12 +18,18 @@ function fillTable(rows)
             <tr>
                 <td><img src="../../resources/img/productos/${row.plant_picture}" class="materialboxed" height="100"></td>
                 <td>${row.plant_name}</td>
-                <td>${row.plant_price}</td>
                 <td>${row.type_name}</td>
-                <td><i class="material-icons">${icon}</i></td>
+                <td>${row.plant_descript}</td>
+                <td>${row.plant_price}</td>
+                <td>${row.stock}</td>
+                <td>${row.flowerpot}</td>
                 <td>
-                    <a href="#" onclick="modalUpdate(${row.plant_id})" class="blue-text tooltipped" data-tooltip="Modificar"><i class="material-icons">mode_edit</i></a>
-                    <a href="#" onclick="confirmDelete(${row.plant_id}, '${row.plant_picture}')" class="red-text tooltipped" data-tooltip="Eliminar"><i class="material-icons">delete</i></a>
+                    <a href="#" onclick="modalUpdate(${row.type_id})" class="btn-floating btn-small waves-effect waves-light light-green accent-2 tooltipped" data-tooltip="Modificar">
+                        <i class="material-icons">create</i>
+                    </a>
+                    <a href="#" onclick="confirmDelete(${row.plant_id}, '${row.plant_picture}')" class="btn-floating btn-small waves-effect waves-light red tooltipped" data-tooltip="Eliminar">
+                    <i class="material-icons">delete</i>
+                </a>
                 </td>
             </tr>
         `;

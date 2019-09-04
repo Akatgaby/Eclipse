@@ -34,7 +34,7 @@ function modalProfile()
             const result = JSON.parse(response);
             // Se comprueba si el resultado es satisfactorio, sino se muestra la excepción
             if (result.status) {
-                $('#profile_nombres').val(result.dataset.name_adm);
+                $('#profile_nombres').val(result.dataset.name_client);
                 $('#profile_apellidos').val(result.dataset.last_name);
                 $('#profile_correo').val(result.dataset.e_mail);
                 $('#profile_alias').val(result.dataset.user_name);

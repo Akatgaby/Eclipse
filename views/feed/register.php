@@ -56,8 +56,6 @@ Feed::headerTemplate('Registro');
             </div>
         </div>
     </div>
-<script src="https://www.google.com/recaptcha/api.js?render=6LcJbLUUAAAAAEnCdA77nqxbBffbvN0L2ZzGSQtF"></script>
-<script src="../../resources/js/captcha.js"></script>
 <?php
 Feed::footerTemplate('register.js');
 ?>

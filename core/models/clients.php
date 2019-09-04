@@ -1,5 +1,5 @@
 <?php
-class Usuarios extends Validator
+class Clients extends Validator
 {
 	// Declaración de propiedades
 	private $id = null;
@@ -116,11 +116,11 @@ class Usuarios extends Validator
 
 	public function checkPassword()
 	{
-		$sql = 'SELECT pass_word, name_adm, last_name FROM table_clients WHERE user_id = ?';
+		$sql = 'SELECT pass_word, name_client, last_name FROM table_clients WHERE user_id = ?';
 		$params = array($this->id);
 		$data = Database::getRow($sql, $params);
 		if (password_verify($this->clave, $data['pass_word'])) {
-			$this->nombres=$data['name_adm'];
+			$this->nombres=$data['name_client'];
 			$this->apellidos=$data['last_name'];
 			return true;
 		} else {
@@ -139,14 +139,14 @@ class Usuarios extends Validator
 	// Metodos para manejar el SCRUD
 	public function readUsuarios()
 	{
-		$sql = 'SELECT user_id, name_adm, last_name, e_mail, user_name FROM table_clients ORDER BY last_name';
+		$sql = 'SELECT user_id, name_client, last_name, e_mail, user_name FROM table_clients ORDER BY last_name';
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
 
 	public function searchUsuarios($value)
 	{
-		$sql = 'SELECT user_id, name_adm, last_name, e_mail, user_name FROM table_clients WHERE last_name LIKE ? OR name_adm LIKE ? ORDER BY last_name';
+		$sql = 'SELECT user_id, name_client, last_name, e_mail, user_name FROM table_clients WHERE last_name LIKE ? OR name_client LIKE ? ORDER BY last_name';
 		$params = array("%$value%", "%$value%");
 		return Database::getRows($sql, $params);
 	}
@@ -154,21 +154,21 @@ class Usuarios extends Validator
 	public function createUsuario()
 	{
 		$hash = password_hash($this->clave, PASSWORD_DEFAULT);
-		$sql = 'INSERT INTO table_clients(name_adm, last_name, e_mail, user_name, pass_word) VALUES(?, ?, ?, ?, ?)';
+		$sql = 'INSERT INTO table_clients(name_client, last_name, e_mail, user_name, pass_word) VALUES(?, ?, ?, ?, ?)';
 		$params = array($this->nombres, $this->apellidos, $this->correo, $this->alias, $hash);
 		return Database::executeRow($sql, $params);
 	}
 
 	public function getUsuario()
 	{
-		$sql = 'SELECT user_id, name_adm, last_name, e_mail, user_name FROM table_clients WHERE user_id = ?';
+		$sql = 'SELECT user_id, name_client, last_name, e_mail, user_name FROM table_clients WHERE user_id = ?';
 		$params = array($this->id);
 		return Database::getRow($sql, $params);
 	}
 
 	public function updateUsuario()
 	{
-		$sql = 'UPDATE table_clients SET name_adm = ?, last_name = ?, e_mail = ?, user_name = ? WHERE user_id = ?';
+		$sql = 'UPDATE table_clients SET name_client = ?, last_name = ?, e_mail = ?, user_name = ? WHERE user_id = ?';
 		$params = array($this->nombres, $this->apellidos, $this->correo, $this->alias, $this->id);
 		return Database::executeRow($sql, $params);
 	}

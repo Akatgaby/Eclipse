@@ -1,4 +1,3 @@
-var tryx = 0;
 $(document).ready(function()
 {
     checkUsuarios();
@@ -40,7 +39,6 @@ $('#form-sesion').submit(function()
     var data = { 
         alias: alias.validate,
         clave: clave.validate,
-        intentos:tryx
     }
     event.preventDefault();
     $.ajax({
@@ -58,7 +56,6 @@ $('#form-sesion').submit(function()
                 sweetAlert(1, dataset.message, 'main.php');
             } else {
                 sweetAlert(2, dataset.exception, null);
-                tryx++;
             }
         } else {
             console.log(response);

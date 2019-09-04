@@ -265,7 +265,6 @@ if (isset($_GET['action'])) {
                 }
                 break;
             case 'login':
-
                 $_POST = $usuario->validateForm($_POST);
                 if ($usuario->setAlias($_POST['alias'])) {
                     if ($usuario->checkAlias()) {

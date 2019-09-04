@@ -10,7 +10,7 @@ class Productos extends Validator
 	private $cantidad = null;
 	private $maceta = null;
 	private $categoria = null;
-	private $ruta = '../../../resources/img/files/';
+	private $ruta = '../../resources/img/files/';
 
 	// Métodos para sobrecarga de propiedades
 	public function setId($value)
@@ -141,21 +141,21 @@ class Productos extends Validator
 	// Métodos para el manejo del SCRUD
 	public function readProductosCategoria()
 	{
-		$sql = 'SELECT type_name, plant_id, plant_picture, plant_name, plant_descript, plant_price, stock, flowerpot FROM table_plants INNER JOIN table_type USING(type_name) WHERE type_name = ? ORDER BY plant_name';
+		$sql = 'SELECT P.plant_id, P.plant_picture, P.plant_name, P.plant_descript, P.plant_price, T.type_name, P.stock, P.flowerpot FROM table_plants as P, table_type as T WHERE P.type_name = T.type_id AND P.type_name = ? ORDER BY plant_name';
 		$params = array($this->categoria);
 		return Database::getRows($sql, $params);
 	}
 
 	public function readProductos()
 	{
-		$sql = 'SELECT plant_id, plant_picture, plant_name, plant_descript, plant_price, type_name, stock, flowerpot FROM table_plants INNER JOIN table_type USING(type_name) ORDER BY plant_name';
+		$sql = 'SELECT P.plant_id, P.plant_picture, P.plant_name, P.plant_descript, P.plant_price, T.type_name, P.stock, P.flowerpot FROM table_plants as P, table_type as T WHERE P.type_name = T.type_id ORDER BY plant_name';
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
 
 	public function searchProductos($value)
 	{
-		$sql = 'SELECT plant_id, plant_picture, plant_name, plant_descript, plant_price, type_name, stock, flowerpot FROM table_plants INNER JOIN table_type USING(type_name) WHERE plant_name LIKE ? OR plant_descript LIKE ? ORDER BY plant_name';
+		$sql = 'SELECT P.plant_id, P.plant_picture, P.plant_name, P.plant_descript, P.plant_price, P.type_name, P.stock, P.flowerpot FROM table_plants as P WHERE P.plant_name LIKE ? or P.plant_descript LIKE ? ORDER BY plant_name';
 		$params = array("%$value%", "%$value%");
 		return Database::getRows($sql, $params);
 	}

@@ -70,30 +70,9 @@ if (isset($_GET['action'])) {
 					if ($categoria->getCategoria()) {
 						if ($categoria->setNombre($_POST['update_nombre'])) {
 							if ($categoria->setDescripcion($_POST['update_descripcion'])) {
-								if (is_uploaded_file($_FILES['update_archivo']['tmp_name'])) {
-									if ($categoria->setImagen($_FILES['update_archivo'], $_POST['imagen_categoria'])) {
-										$archivo = true;
-									} else {
-										$result['exception'] = $categoria->getImageError();
-										$archivo = false;
-									}
-								} else {
-									if (!$categoria->setImagen(null, $_POST['imagen_categoria'])) {
-										$result['exception'] = $categoria->getImageError();
-									}
-									$archivo = false;
-								}
 								if ($categoria->updateCategoria()) {
 									$result['status'] = 1;
-									if ($archivo) {
-										if ($categoria->saveFile($_FILES['update_archivo'], $categoria->getRuta(), $categoria->getImagen())) {
-											$result['message'] = 'Categoría modificada correctamente';
-										} else {
-											$result['message'] = 'Categoría modificada. No se guardó el archivo';
-										}
-									} else {
-										$result['message'] = 'Categoría modificada. No se subió ningún archivo';
-									}
+									$result['message'] = 'Categoría modificada correctamente';
 								} else {
 									$result['exception'] = 'Operación fallida';
 								}
@@ -115,11 +94,7 @@ if (isset($_GET['action'])) {
 					if ($categoria->getCategoria()) {
 						if ($categoria->deleteCategoria()) {
 							$result['status'] = 1;
-							if ($categoria->deleteFile($categoria->getRuta(), $_POST['imagen_categoria'])) {
-								$result['message'] = 'Categoría eliminada correctamente';
-							} else {
-								$result['message'] = 'Categoría eliminada. No se borró el archivo';
-							}
+							$result['message'] = 'Categoría eliminada correctamente';
 						} else {
 							$result['exception'] = 'Operación fallida';
 						}

@@ -22,7 +22,7 @@ Dashboard::headerTemplate('Administrar categorías');
     </div>
 </div>
 <!-- Tabla para mostrar los registros existentes -->
-<table class="highlight">
+<table class="highlight responsive-table">
     <thead>
         <tr>
             <th>Categoría</th>
