@@ -9,7 +9,7 @@ if (isset($_GET['action'])) {
     $producto = new Productos;
     $result = array('status' => 0, 'message' => null, 'exception' => null);
     // Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
-	if (isset($_SESSION['idUsuario'])) {
+    if (isset($_SESSION['idUsuario'])) {
         switch ($_GET['action']) {
             case 'read':
                 if ($result['dataset'] = $producto->readProductos()) {
@@ -23,12 +23,12 @@ if (isset($_GET['action'])) {
                 if ($_POST['busqueda'] != '') {
                     if ($result['dataset'] = $producto->searchProductos($_POST['busqueda'])) {
                         $result['status'] = 1;
-						$rows = count($result['dataset']);
-						if ($rows > 1) {
-							$result['message'] = 'Se encontraron '.$rows.' coincidencias';
-						} else {
-							$result['message'] = 'Solo existe una coincidencia';
-						}
+                        $rows = count($result['dataset']);
+                        if ($rows > 1) {
+                            $result['message'] = 'Se encontraron ' . $rows . ' coincidencias';
+                        } else {
+                            $result['message'] = 'Solo existe una coincidencia';
+                        }
                     } else {
                         $result['exception'] = 'No hay coincidencias';
                     }
@@ -38,32 +38,36 @@ if (isset($_GET['action'])) {
                 break;
             case 'create':
                 $_POST = $producto->validateForm($_POST);
-                if ($producto->setNombre($_POST['create_nombre'])) {
+                if ($producto->setPlanta($_POST['create_nombre'])) {
                     if ($producto->setDescripcion($_POST['create_descripcion'])) {
                         if ($producto->setPrecio($_POST['create_precio'])) {
                             if (isset($_POST['create_categoria'])) {
                                 if ($producto->setCategoria($_POST['create_categoria'])) {
-                                    if ($producto->setEstado(isset($_POST['create_estado']) ? 1 : 0)) {
-                                        if (is_uploaded_file($_FILES['create_archivo']['tmp_name'])) {
-                                            if ($producto->setImagen($_FILES['create_archivo'], null)) {
-                                                if ($producto->createProducto()) {
-                                                    $result['status'] = 1;
-                                                    if ($producto->saveFile($_FILES['create_archivo'], $producto->getRuta(), $producto->getImagen())) {
-                                                        $result['message'] = 'Producto creado correctamente';
+                                    if ($producto->setCantidad($_POST['create_existencia'])) {
+                                        if ($producto->setMaceta($_POST['create_maceta'])) {
+                                            if (is_uploaded_file($_FILES['create_archivo']['tmp_name'])) {
+                                                if ($producto->setImagen($_FILES['create_archivo'], null)) {
+                                                    if ($producto->createProducto()) {
+                                                        $result['status'] = 1;
+                                                        if ($producto->saveFile($_FILES['create_archivo'], $producto->getRuta(), $producto->getImagen())) {
+                                                            $result['message'] = 'Producto creado correctamente';
+                                                        } else {
+                                                            $result['message'] = 'Producto creado. No se guardó el archivo';
+                                                        }
                                                     } else {
-                                                        $result['message'] = 'Producto creado. No se guardó el archivo';
+                                                        $result['exception'] = 'Operación fallida';
                                                     }
                                                 } else {
-                                                    $result['exception'] = 'Operación fallida';
+                                                    $result['exception'] = $producto->getImageError();
                                                 }
                                             } else {
-                                                $result['exception'] = $producto->getImageError();
+                                                $result['exception'] = 'Seleccione una imagen';
                                             }
                                         } else {
-                                            $result['exception'] = 'Seleccione una imagen';
+                                            $result['exception'] = 'Maceta incorrecta';
                                         }
                                     } else {
-                                        $result['exception'] = 'Estado incorrecto';
+                                        $result['exception'] = 'Existencia incorrecto';
                                     }
                                 } else {
                                     $result['exception'] = 'Categoría incorrecta';
@@ -185,5 +189,5 @@ if (isset($_GET['action'])) {
         exit('Acceso no disponible');
     }
 } else {
-	exit('Recurso denegado');
+    exit('Recurso denegado');
 }

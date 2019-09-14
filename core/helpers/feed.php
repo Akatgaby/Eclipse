@@ -36,7 +36,7 @@ class Feed
 		// Se comprueba si existe una sesión para mostrar el menú de opciones, de lo contrario se muestra un menú vacío
 		if (isset($_SESSION['idUsuario'])) {
 			//Tiempo en segundos para dar vida a la sesión.
-			$inactivo = 60; // Fórmula para obtener segundos (min * 60)
+			$inactivo = 5000; // Fórmula para obtener segundos (min * 60)
 			//Calculamos tiempo de vida inactivo.
 			$vida_session = time() - $_SESSION['tiempo'];
 			//Compraración para redirigir página, si la vida de sesión sea mayor a el tiempo insertado en inactivo.
@@ -54,9 +54,9 @@ class Feed
 				print('
 					<header>
 						<div class="navbar-fixed">
-							<nav class="white black-text">
+							<nav class="purple lighten-4 black-text">
 								<div class="brand-sidebar black">
-									<a class="brand-logo">
+									<a class="brand-logo center">
 										<img src="../../resources/img/ico.png" alt="ico-illusion" height="25">
 										<span class="black-text">Eclipse</span>
 									</a>
@@ -64,12 +64,10 @@ class Feed
 								<div class="nav-wrapper">
 									<a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 									<ul class="right hide-on-med-and-down">
-										<li><a href="main.php"><i class="material-icons left">shopping_cart</i>Compras</a></li>
-										<li><a href="productos.php"><i class="material-icons left">filter_vintage</i>Productos</a></li>
-										<li><a href="categorias.php"><i class="material-icons left">favorite_border</i>Categorías</a></li>
-										<li><a href="usuarios.php"><i class="material-icons left">group_add</i>Usuarios</a></li>
-										<li><a href="main.php"><i class="material-icons left">home</i>Inicio</a></li>
-										<li><a href="#" class="dropdown-trigger" data-target="dropdown"><i class="material-icons left">person</i>Cuenta: <b>' . $_SESSION['aliasUsuario'] . '</b></a></li>
+										<li><a href="carrito.php" class="black-text"><i class="material-icons left">shopping_cart</i>Compras</a></li>
+										<li><a href="productos.php" class="black-text"><i class="material-icons left">local_florist</i>Productos</a></li>
+										<li><a href="main.php" class="black-text"><i class="material-icons left">home</i>Inicio</a></li>
+										<li><a href="#" class="dropdown-trigger black-text" data-target="dropdown"><i class="material-icons left">person</i>Cuenta: <b>' . $_SESSION['aliasUsuario'] . '</b></a></li>
 									</ul>
 									<ul id="dropdown" class="dropdown-content">
 										<li><a href="#mo" onclick="modalProfile()"><i class="material-icons">mode_edit</i>Perfil</a></li>
@@ -81,10 +79,8 @@ class Feed
 						</div>
 						<ul class="sidenav" id="mobile">
 							<li><a href="main.php"><i class="material-icons left">home</i>Inicio</a></li>
-							<li><a href="productos.php"><i class="material-icons left">shopping_cart</i>Compras</a></li>
-							<li><a href="productos.php"><i class="material-icons left">filter_vintage</i>Productos</a></li>
-							<li><a href="categorias.php"><i class="material-icons left">favorite_border</i>Categorías</a></li>
-							<li><a href="usuarios.php"><i class="material-icons left">group_add</i>Usuarios</a></li>
+							<li><a href="carrito.php"><i class="material-icons left">shopping_cart</i>Compras</a></li>
+							<li><a href="productos.php"><i class="material-icons left">favorite_border</i>Productos</a></li>
 							<li><a href="#" class="dropdown-trigger" data-target="dropdown-mobile"><i class="material-icons left">person</i>Cuenta: <b>' . $_SESSION['aliasUsuario'] . '</b></a></li>
 						</ul>
 						<ul id="dropdown-mobile" class="dropdown-content">
@@ -93,13 +89,26 @@ class Feed
 							<li><a href="#" onclick="signOff()">Salir</a></li>
 						</ul>
 					</header>
+					<!-- BEGIN: Profile Button -->
+					<div class="fixed-action-btn">
+						<a class="btn-floating btn-large light-green tooltipped" data-position="left" data-tooltip="Cuenta">
+							<i class="large material-icons">person</i>
+						</a>
+						<ul>
+							<li><a href="" class="btn-floating red lighten-4 tooltipped" data-position="top" data-tooltip="Perfil"><i class="material-icons">person</i></a></li>
+							<li><a href="#" onclick="modalProfile()" class="btn-floating red lighten-3 tooltipped" data-position="top" data-tooltip="Editar"><i class="material-icons">edit</i></a></li>
+							<li><a href="#modal-password" class="modal-trigger btn-floating red lighten-2 tooltipped" data-position="top" data-tooltip="Contraseña"><i class="material-icons">lock</i></a></li>
+							<li><a href="#" onclick="signOff()" class="btn-floating red lighten-1 tooltipped" data-position="top" data-tooltip="Salir"><i class="material-icons">power_settings_new</i></a></li>
+						</ul>
+					</div>
+					<!-- END: Profile Button -->
 					<main class="container">
 				');
 				$filename = basename($_SERVER['PHP_SELF']);
 				if ($filename != 'main.php') {
 					print('<h3 class="center-align">' . $title . '</h3>');
 				} else {
-					print('<h3 class="center-align">Bienvenido de vuelta, cliente ' . $_SESSION['Nombre'] . '.</h3>');
+					print('<h3 class="center-align">Cliente ' . $_SESSION['Nombre'] . '.</h3>');
 				}
 			} else {
 				header('location: main.php');

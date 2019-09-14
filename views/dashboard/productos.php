@@ -5,26 +5,28 @@ Dashboard::headerTemplate('Administrar productos');
 <div class="row">
     <!-- Formulario de búsqueda -->
     <form method="post" id="form-search">
-        <div class="input-field col s6 m4">
+        <div class="input-field col s12">
             <i class="material-icons prefix">search</i>
-            <input id="buscar" type="text" name="busqueda" />
+            <input id="buscar" type="text" name="busqueda"/>
             <label for="buscar">Buscador</label>
         </div>
-        <div class="input-field col s6 m4">
+        <div class="input-field col s12 center">
             <button type="submit" class="btn-floating btn waves-effect waves-light green"><i class="material-icons">check</i></button>
         </div>
+        <div class="input-field center-align col s12 center">
+        <a onclick="modalCreate()" class="btn-floating btn waves-effect waves-light red lighten-3 tooltipped" data-position="left" data-tooltip="Agregar una producto">
+            <i class="material-icons">add</i>
+        </a>
+    </div>
     </form>
     <!-- Botón para abrir ventana de nuevo registro -->
-    <div class="input-field center-align col s12 m4">
-        <a href="#" onclick="modalCreate()" class="btn-floating btn waves-effect waves-light red lighten-3 tooltipped modal-trigger" data-position="left" data-tooltip="Agregar un nuevo producto">
-            <i class="material-icons">add</i></a>
-    </div>
 </div>
 <!-- Tabla para mostrar los registros existentes -->
 <table class="highlight responsive-table">
     <thead>
         <tr>
             <th>Imagen</th>
+            <th>.</th>
             <th>Producto</th>
             <th>Categoría</th>
             <th>Descripción</th>
@@ -60,15 +62,13 @@ Dashboard::headerTemplate('Administrar productos');
                 </div>
                 <div class="input-field col s12 m6">
                     <i class="material-icons prefix">description</i>
-                    <input id="create_existencia" type="text" name="create_existencia" class="validate" required />
+                    <input id="create_existencia" type="number" name="create_existencia" class="validate" required />
                     <label for="create_existencia">Existencia</label>
                 </div>
                 <div class="input-field col s12 m6">
-                    <select name="create_flowerpot">
-                        <option value="text">Sin maceta</option>
-                        <option value="text">Con maceta</option>
-                    </select>
-                    <label>Adicionales</label>
+                    <i class="material-icons prefix">description</i>
+                    <input id="create_maceta" type="text" name="create_maceta" class="validate" required />
+                    <label for="create_maceta">Maceta</label>
                 </div>
                 <div class="input-field col s12 m6">
                     <select id="create_categoria" name="create_categoria">

@@ -163,7 +163,7 @@ class Productos extends Validator
 	public function createProducto()
 	{
 		$sql = 'INSERT INTO table_plants(plant_name, plant_descript, plant_price, plant_picture, stock, flowerpot, type_name) VALUES(?, ?, ?, ?, ?, ?, ?)';
-		$params = array($this->nombre, $this->descripcion, $this->precio, $this->imagen, $this->estado, $this->maceta, $this->categoria);
+		$params = array($this->planta, $this->descripcion, $this->precio, $this->imagen, $this->cantidad, $this->maceta, $this->categoria);
 		return Database::executeRow($sql, $params);
 	}
 
@@ -177,7 +177,7 @@ class Productos extends Validator
 	public function updateProducto()
 	{
 		$sql = 'UPDATE table_plants SET plant_name = ?, plant_descript = ?, plant_price = ?, plant_picture = ?, stock = ?, flowerpot = ?, type_name = ? WHERE plant_id = ?';
-		$params = array($this->nombre, $this->descripcion, $this->precio, $this->imagen, $this->estado, $this->maceta, $this->categoria, $this->id);
+		$params = array($this->planta, $this->descripcion, $this->precio, $this->imagen, $this->cantidad, $this->maceta, $this->categoria, $this->id);
 		return Database::executeRow($sql, $params);
 	}
 

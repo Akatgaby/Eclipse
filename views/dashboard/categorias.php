@@ -5,24 +5,25 @@ Dashboard::headerTemplate('Administrar categorías');
 <div class="row">
     <!-- Formulario de búsqueda -->
     <form method="post" id="form-search">
-        <div class="input-field col s6 m4">
+        <div class="input-field col s12">
             <i class="material-icons prefix">search</i>
             <input id="buscar" type="text" name="busqueda"/>
             <label for="buscar">Buscador</label>
         </div>
-        <div class="input-field col s6 m4">
+        <div class="input-field col s12 center">
             <button type="submit" class="btn-floating btn waves-effect waves-light green"><i class="material-icons">check</i></button>
         </div>
-    </form>
-    <!-- Botón para abrir ventana de nuevo registro -->
-    <div class="input-field center-align col s12 m4">
+        <div class="input-field center-align col s12 center">
         <a href="#modal-create" class="btn-floating btn waves-effect waves-light red lighten-3 tooltipped modal-trigger" data-position="left" data-tooltip="Agregar una categoría">
             <i class="material-icons">add</i>
         </a>
     </div>
+    </form>
+    <!-- Botón para abrir ventana de nuevo registro -->
+
 </div>
 <!-- Tabla para mostrar los registros existentes -->
-<table class="highlight responsive-table">
+<table class="highlight centered">
     <thead>
         <tr>
             <th>Categoría</th>

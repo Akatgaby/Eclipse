@@ -8,6 +8,7 @@ class Usuarios extends Validator
 	private $correo = null;
 	private $alias = null;
 	private $clave = null;
+	private $block = 0;
 
 	// Métodos para sobrecarga de propiedades
 	public function setId($value)
@@ -100,14 +101,30 @@ class Usuarios extends Validator
 		return $this->clave;
 	}
 
+	public function setBlock($value)
+	{
+		if ($this->validateId($value)) {
+			$this->block = $value;
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public function getBlock()
+	{
+		return $this->block;
+	}
+
 	// Métodos para manejar la sesión del usuario
 	public function checkAlias()
 	{
-		$sql = 'SELECT user_id FROM table_users WHERE user_name = ?';
+		$sql = 'SELECT user_id, block FROM table_users WHERE user_name = ?';
 		$params = array($this->alias);
 		$data = Database::getRow($sql, $params);
 		if ($data) {
 			$this->id = $data['user_id'];
+			$this->block = $data['block'];
 			return true;
 		} else {
 			return false;
@@ -168,14 +185,21 @@ class Usuarios extends Validator
 
 	public function updateUsuario()
 	{
-		$sql = 'UPDATE table_users SET name_adm = ?, last_name = ?, e_mail = ?, user_name = ? WHERE user_id = ?';
-		$params = array($this->nombres, $this->apellidos, $this->correo, $this->alias, $this->id);
+		$sql = 'UPDATE table_users SET name_adm = ?, last_name = ?, e_mail = ?, user_name = ?, block = ? WHERE user_id = ?';
+		$params = array($this->nombres, $this->apellidos, $this->correo, $this->alias, $this->block, $this->id);
 		return Database::executeRow($sql, $params);
 	}
 
 	public function deleteUsuario()
 	{
 		$sql = 'DELETE FROM table_users WHERE user_id = ?';
+		$params = array($this->id);
+		return Database::executeRow($sql, $params);
+	}
+
+	public function summonBlock()
+	{
+		$sql = 'UPDATE table_users SET block = block+1 WHERE user_id = ?';
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}

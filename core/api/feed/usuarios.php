@@ -7,7 +7,6 @@ require_once('../../models/clients.php');
 if (isset($_GET['action'])) {
     session_start();
     $usuario = new Clients;
-    $errorLog = 0;
     $result = array('status' => 0, 'message' => null, 'exception' => null);
     //Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
     if (isset($_SESSION['idUsuario'])) {
@@ -277,6 +276,7 @@ if (isset($_GET['action'])) {
                                 $_SESSION['idUsuario'] = $usuario->getId();
                                 $_SESSION['aliasUsuario'] = $usuario->getAlias();
                                 $_SESSION['Nombre'] = $usuario->getNombres().' '.$usuario->getApellidos();
+                                $_SESSION['tiempo'] = time();
                                 $result['status'] = 1;
                                 $result['message'] = 'Autenticación correcta';
                             } else {

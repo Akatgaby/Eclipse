@@ -106,6 +106,11 @@ Dashboard::headerTemplate('Administrar usuarios');
                     <input id="update_alias" type="text" name="update_alias" class="validate" required/>
                     <label for="update_alias">Alias</label>
                 </div>
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">person</i>
+                    <input id="atsushi" type="number" name="atsushi" class="validate"/>
+                    <label for="atsushi">Escriba 0 para desbloquear usuario</label>
+                </div>
             </div>
             <div class="row center-align">
                 <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i class="material-icons">cancel</i></a>

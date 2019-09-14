@@ -10,6 +10,12 @@
     background-repeat: repeat;
 }
 
+.Saki
+{
+    background-image: url('../img/clientBG.jpg');
+    background-repeat: repeat;
+}
+
 #LoginStyle
 {
     display: flex;
