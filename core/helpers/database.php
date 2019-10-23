@@ -18,7 +18,7 @@ class Database
     {
         // Credenciales para establecer la conexión con la base de datos.
         $server = 'localhost';
-        $database = 'eclipse';
+        $database = 'database_monsters';
         $username = 'root';
         $password = '';
         try {

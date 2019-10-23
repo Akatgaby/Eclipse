@@ -1,5 +1,5 @@
 <?php
-class Categorias extends Validator
+class To_school extends Validator
 {
 	// Declaración de propiedades
 	private $id = null;
@@ -60,42 +60,42 @@ class Categorias extends Validator
 	// Metodos para el manejo del SCRUD
 	public function readCategorias()
 	{
-		$sql = 'SELECT type_id, type_name, type_descript FROM table_careers ORDER BY type_name';
+		$sql = 'SELECT type_id, type_name, type_descript FROM table_places ORDER BY type_name';
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
 
 	public function searchCategorias($value)
 	{
-		$sql = 'SELECT * FROM table_careers WHERE type_name LIKE ? OR type_descript LIKE ? ORDER BY type_name';
+		$sql = 'SELECT * FROM table_places WHERE type_name LIKE ? OR type_descript LIKE ? ORDER BY type_name';
 		$params = array("%$value%", "%$value%");
 		return Database::getRows($sql, $params);
 	}
 
 	public function createCategoria()
 	{
-		$sql = 'INSERT INTO table_careers(type_name, type_descript) VALUES(?, ?)';
+		$sql = 'INSERT INTO table_places(type_name, type_descript) VALUES(?, ?)';
 		$params = array($this->nombre, $this->descripcion);
 		return Database::executeRow($sql, $params);
 	}
 
 	public function getCategoria()
 	{
-		$sql = 'SELECT type_id, type_name, type_descript FROM table_careers WHERE type_id = ?';
+		$sql = 'SELECT type_id, type_name, type_descript FROM table_places WHERE type_id = ?';
 		$params = array($this->id);
 		return Database::getRow($sql, $params);
 	}
 
 	public function updateCategoria()
 	{
-		$sql = 'UPDATE table_careers SET type_name = ?, type_descript = ? WHERE type_id = ?';
+		$sql = 'UPDATE table_places SET type_name = ?, type_descript = ? WHERE type_id = ?';
 		$params = array($this->nombre, $this->descripcion, $this->id);
 		return Database::executeRow($sql, $params);
 	}
 
 	public function deleteCategoria()
 	{
-		$sql = 'DELETE FROM table_careers WHERE type_id = ?';
+		$sql = 'DELETE FROM table_places WHERE type_id = ?';
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}

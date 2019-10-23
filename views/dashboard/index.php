@@ -6,7 +6,7 @@ Dashboard::headerTemplate('Iniciar sesión');
 <body class="Aki">
     <div class="row">
         <div class="col s12">
-            <div id="LoginStyle">
+            <div id="SinB">
                 <div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 Card">
                     <form method="post" id="form-sesion">
                         <div class="row margin">
@@ -31,11 +31,6 @@ Dashboard::headerTemplate('Iniciar sesión');
                         <div class="row margin">
                             <div class="input-field col s12">
                                 <button type="submit" class="btn waves-effect waves-light black col s12 border-round">Entrar</button>
-                            </div>
-                        </div>
-                        <div class="row margin center">
-                            <div class="input-field col s12">
-                                <p class="margin medium-small"><a href="../security/password.php">Olvidé mi contraseña</a></p>
                             </div>
                         </div>
                     </form>

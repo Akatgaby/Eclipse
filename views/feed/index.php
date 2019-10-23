@@ -12,30 +12,26 @@ Feed::headerTemplate('Iniciar sesión');
                         <div class="row margin">
                             <div class="input-field col s12">
                                 <h5 class="black-text">Iniciar Sesión</h5>
+                                <p>Si aún no tenés una cuenta registrate para poder consultar el proceso de inscripción.</p>
                             </div>
                         </div>
                         <div class="row margin">
                             <div class="input-field col s12">
                                 <i class="material-icons black-text prefix pt-2">person_outline</i>
                                 <input id="alias" type="text" name="alias" class="validate" autocomplete="off" required/>
-                                <label for="alias">Nombre de usuario</label>
+                                <label for="alias" class="purple-text">Nombre de usuario</label>
                             </div>
                         </div>
                         <div class="row margin">
                             <div class="input-field col s12">
                                 <i class="material-icons black-text prefix pt-2">lock_outline</i>
                                 <input id="clave" type="password" name="clave" class="validate" autocomplete="off" required/>
-                                <label for="clave">Contraseña</label>
+                                <label for="clave" class="purple-text">Contraseña</label>
                             </div>
                         </div>
                         <div class="row margin">
                             <div class="input-field col s12">
                                 <button type="submit" class="btn waves-effect waves-light black col s12 border-round">Entrar</button>
-                            </div>
-                        </div>
-                        <div class="row margin center">
-                            <div class="input-field col s12">
-                                <p class="margin medium-small"><a href="../security/password.php">Olvidé mi contraseña</a></p>
                             </div>
                         </div>
                     </form>

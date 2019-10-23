@@ -7,13 +7,7 @@
 .AkiZwg
 {
     background-image: url('../img/publicBG.jpg');
-    background-repeat: repeat;
-}
-
-.Saki
-{
-    background-image: url('../img/clientBG.jpg');
-    background-repeat: repeat;
+    background-repeat: no-repeat;
 }
 
 #LoginStyle
@@ -25,6 +19,21 @@
 }
 
 #LoginStyle .card-panel.border-radius-6.Card
+{
+    margin-left: 0 !important;
+    width: 500px;
+    height: 400px;
+}
+
+#SinB
+{
+    display: flex;
+    height: 86vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#SinB .card-panel.border-radius-6.Card
 {
     margin-left: 0 !important;
     width: 502px;

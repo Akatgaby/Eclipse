@@ -2,27 +2,96 @@
 require_once('../../core/helpers/feed.php');
 Feed::headerTemplate('Bienvenido');
 ?>
-<body class="Saki">
-    <div class="row">
-        <h4 class="center-align purple-text" id="greeting"></h4>
-    </div>
-    <!-- BEGIN: Carousel -->
-
-    <h6 class="center-align black-text">Presione el botón verde de la esquina para configurar su perfil.</h6>
-    <div class="carousel">
-        <a class="carousel-item" href="#one!"><img src="../../resources/img/flowers/O1.jpg"></a>
-        <a class="carousel-item" href="#two!"><img src="../../resources/img/flowers/O2.jpg"></a>
-        <a class="carousel-item" href="#three!"><img src="../../resources/img/flowers/O3.jpg"></a>
-        <a class="carousel-item" href="#four!"><img src="../../resources/img/flowers/O4.jpg"></a>
-        <a class="carousel-item" href="#five!"><img src="../../resources/img/flowers/O5.jpg"></a>
-        <a class="carousel-item" href="#six!"><img src="../../resources/img/flowers/O6.jpg"></a>
-        <a class="carousel-item" href="#seven!"><img src="../../resources/img/flowers/O7.jpg"></a>
-        <a class="carousel-item" href="#eight!"><img src="../../resources/img/flowers/O8.jpg"></a>
-        <a class="carousel-item" href="#nine!"><img src="../../resources/img/flowers/O9.jpg"></a>
-        <a class="carousel-item" href="#nine!"><img src="../../resources/img/flowers/1O.jpg"></a>
-
-    </div>
-    <!-- END: Carousel -->
-    <?php
-    Feed::footerTemplate('main.js');
-    ?>
+<body class="cyan lighten-5">
+    <body>
+        <div class="card">
+            <div class="card-image">
+                <img src="../../resources/img/O1.png" class="animated fadeIn">
+            </div>
+        </div>
+        <div class="row">
+            <div class="center">
+            </div>
+            <div class="row">
+                <div class="col s12 m6" id="content-information">
+                    <div class="center">
+                        <span>
+                            <div class="chip blue white-text" id="chip-information">Oferta académica</div>
+                        </span>
+                        <div class="row" id="objectives">
+                            <div class="col s12 m6 offset-m3">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="center">
+                                            <i class="material-icons green-text">bookmark_border</i>
+                                        </div>
+                                        <span class="black-text">Explora las carreras que tenemos disponibles para los estudiates que deseen aplicar.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6" id="content-information">
+                    <div class="center">
+                        <span>
+                            <div class="chip blue white-text" id="chip-information">Servicios</div>
+                        </span>
+                        <div class="row" id="objectives">
+                            <div class="col s12 m6 offset-m3">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="center">
+                                            <i class="material-icons green-text">computer</i>
+                                        </div>
+                                        <span class="black-text">La universidad realiza una labor orientada a despertar y promover el desarrollo integral de la persona.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6" id="content-information">
+                    <div class="center">
+                        <span>
+                            <div class="chip blue white-text" id="chip-information">Estudiantes</div>
+                        </span>
+                        <div class="row" id="objectives">
+                            <div class="col s12 m6 offset-m3">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="center">
+                                            <i class="material-icons green-text">school</i>
+                                        </div>
+                                        <span class="black-text">En cada opción cuentan con los conocimientos, habilidades y actitudes básicas que le permiten insertarse al campo laboral respectivo.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6" id="content-information">
+                    <div class="center">
+                        <span>
+                            <div class="chip blue white-text" id="chip-information">Nuevo ingreso</div>
+                        </span>
+                        <div class="row" id="objectives">
+                            <div class="col s12 m6 offset-m3">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="center">
+                                            <i class="material-icons green-text">group_add</i>
+                                        </div>
+                                        <span class="black-text">A los nuevos postulantes poder realizar el proceso de registro para agilizar la inscripción a las diferentes carreras que ofrecemos.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+<?php
+Feed::footerTemplate('main.js');
+?>

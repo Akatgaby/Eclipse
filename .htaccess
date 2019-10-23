@@ -2,8 +2,8 @@
 # | Custom error messages/pages                                        |
 # ----------------------------------------------------------------------
 
-ErrorDocument 404 /eclipse/resources/pages/error404.html
-ErrorDocument 403 /eclipse/resources/pages/error403.html
+ErrorDocument 404 /monsters/resources/pages/error404.html
+ErrorDocument 403 /monsters/resources/pages/error403.html
 
 # ----------------------------------------------------------------------
 # | Error prevention                                                   |

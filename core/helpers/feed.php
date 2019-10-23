@@ -18,7 +18,7 @@ class Feed
 				<!-- CARACTERES ESPECIALES -->
 				<meta charset="UTF-8">
 				<!-- TÍTULO DE LA VENTANA -->
-				<title>Eclipse | ' . $title . '</title>
+				<title>Monsters University | ' . $title . '</title>
 				<!-- ÍCONO DE LA VENTANA -->
 				<link rel="shortcut icon" type="image/x-icon" href="../../resources/img/ico.png">
 				<!-- MATERIAL ICONS -->
@@ -27,13 +27,14 @@ class Feed
 				<link rel="stylesheet" type="text/css" href="../../resources/css/materialize.min.css">
 				<!-- FUENTE -->
 				<link rel="stylesheet" type="text/css" href="../../resources/css/font.css">
-				<!-- ESTILO -->
+				<!-- ESTILOS -->
 				<link rel="stylesheet" type="text/css" href="../../resources/css/style.css">
+				<link rel="stylesheet" type="text/css" href="../../resources/css/aki.css">
 				<!-- END: Head-->
 				<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			</head>
 		');
-		// Se comprueba si existe una sesión para mostrar el menú de opciones, de lo contrario se muestra un menú vacío
+			// Se comprueba si existe una sesión para mostrar el menú de opciones, de lo contrario se muestra un menú vacío
 		if (isset($_SESSION['idUsuario'])) {
 			//Tiempo en segundos para dar vida a la sesión.
 			$inactivo = 5000; // Fórmula para obtener segundos (min * 60)
@@ -54,20 +55,18 @@ class Feed
 				print('
 					<header>
 						<div class="navbar-fixed">
-							<nav class="purple lighten-4 black-text">
+							<nav class="white black-text">
 								<div class="brand-sidebar black">
 									<a class="brand-logo center">
-										<img src="../../resources/img/ico.png" alt="ico-illusion" height="25">
-										<span class="black-text">Eclipse</span>
+										<img src="../../resources/img/ico2.png" alt="ico" height="25">
 									</a>
 								</div>
 								<div class="nav-wrapper">
 									<a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 									<ul class="right hide-on-med-and-down">
-										<li><a href="carrito.php" class="black-text"><i class="material-icons left">shopping_cart</i>Compras</a></li>
-										<li><a href="productos.php" class="black-text"><i class="material-icons left">local_florist</i>Productos</a></li>
-										<li><a href="main.php" class="black-text"><i class="material-icons left">home</i>Inicio</a></li>
-										<li><a href="#" class="dropdown-trigger black-text" data-target="dropdown"><i class="material-icons left">person</i>Cuenta: <b>' . $_SESSION['aliasUsuario'] . '</b></a></li>
+										<li><a href="student.php" class="middle black-text"><i class="material-icons left">school</i>Datos del aspirante</a></li>
+										<li><a href="main.php" class="middle black-text"><i class="material-icons left">home</i>Inicio</a></li>
+										<li><a href="#" class="middle dropdown-trigger black-text" data-target="dropdown"><i class="material-icons left">person</i>Usuario: <b>' . $_SESSION['aliasUsuario'] . '</b></a></li>
 									</ul>
 									<ul id="dropdown" class="dropdown-content">
 										<li><a href="#mo" onclick="modalProfile()"><i class="material-icons">mode_edit</i>Perfil</a></li>
@@ -77,11 +76,10 @@ class Feed
 								</div>
 							</nav>
 						</div>
-						<ul class="sidenav" id="mobile">
-							<li><a href="main.php"><i class="material-icons left">home</i>Inicio</a></li>
-							<li><a href="carrito.php"><i class="material-icons left">shopping_cart</i>Compras</a></li>
-							<li><a href="productos.php"><i class="material-icons left">favorite_border</i>Productos</a></li>
-							<li><a href="#" class="dropdown-trigger" data-target="dropdown-mobile"><i class="material-icons left">person</i>Cuenta: <b>' . $_SESSION['aliasUsuario'] . '</b></a></li>
+						<ul class="sidenav black-text" id="mobile">
+						<li><a href="student.php" class=" black-text"><i class="material-icons left">school</i>Datos del aspirante</a></li>
+						<li><a href="main.php" class=" black-text"><i class="material-icons left">home</i>Inicio</a></li>
+						<li><a href="#" class=" dropdown-trigger black-text" data-target="dropdown"><i class="material-icons left">person</i>Usuario: <b>' . $_SESSION['aliasUsuario'] . '</b></a></li>
 						</ul>
 						<ul id="dropdown-mobile" class="dropdown-content">
 							<li><a href="#" onclick="modalProfile()">Editar perfil</a></li>
@@ -95,7 +93,7 @@ class Feed
 							<i class="large material-icons">person</i>
 						</a>
 						<ul>
-							<li><a href="" class="btn-floating red lighten-4 tooltipped" data-position="top" data-tooltip="Perfil"><i class="material-icons">person</i></a></li>
+							<li><a href="" class="btn-floating red lighten-4 tooltipped" data-position="top" data-tooltip="Mis datos"><i class="material-icons">person</i></a></li>
 							<li><a href="#" onclick="modalProfile()" class="btn-floating red lighten-3 tooltipped" data-position="top" data-tooltip="Editar"><i class="material-icons">edit</i></a></li>
 							<li><a href="#modal-password" class="modal-trigger btn-floating red lighten-2 tooltipped" data-position="top" data-tooltip="Contraseña"><i class="material-icons">lock</i></a></li>
 							<li><a href="#" onclick="signOff()" class="btn-floating red lighten-1 tooltipped" data-position="top" data-tooltip="Salir"><i class="material-icons">power_settings_new</i></a></li>
@@ -106,9 +104,8 @@ class Feed
 				');
 				$filename = basename($_SERVER['PHP_SELF']);
 				if ($filename != 'main.php') {
-					print('<h3 class="center-align">' . $title . '</h3>');
 				} else {
-					print('<h3 class="center-align">Cliente ' . $_SESSION['Nombre'] . '.</h3>');
+					print('<h3 class="center-align">Aspirante ' . $_SESSION['Nombre'] . '.</h3>');
 				}
 			} else {
 				header('location: main.php');
@@ -120,26 +117,21 @@ class Feed
 			} else {
 				print('
 					<!-- BEGIN: Navbar -->
-						<header>
-							<div class="navbar-fixed">
-								<nav class="white">
-									<div class="brand-sidebar black">
-										<a class="brand-logo center" href="../index.php">
-											<img src="../../resources/img/ico.png" alt="ico-illusion" height="25">
-											<span class="black-text">Eclipse</span>
-										</a>
-										<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<nav class="white">
+							<div class="nav-wrapper">
+								<ul>
 									<li>
-										<a class="black-text" href="register.php">Registrate</a>
+										<a href="index.php" class="middle black-text"> <i class="material-icons left">near_me</i> Iniciar sesión</a>
 									</li>
 									<li>
-										<a class="black-text" href="index.php">Inicia sesión</a>
+										<a href="register.php" class="middle black-text"> <i class="material-icons left">supervisor_account</i> Registrarme</a>
+									</li>
+									<li>
+										<a href="../index.php" class="middle black-text"> <i class="material-icons left">school</i>Acerca de</a>
 									</li>
 								</ul>
-									</div>
-								</nav>
 							</div>
-						</header>
+						</nav>
 					<!-- END: Navbar -->
 				');
 			}

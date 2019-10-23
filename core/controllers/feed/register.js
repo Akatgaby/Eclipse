@@ -19,9 +19,6 @@ function checkUsuarios()
         // Se verifica si la respuesta de la API es una cadena JSON, sino se muestra el resultado en consola
         if (isJSONString(response)) {
             const dataset = JSON.parse(response);
-            if (dataset.status) {
-                sweetAlert(3, dataset.message, 'index.php');
-            }
         } else {
             console.log(response);
         }

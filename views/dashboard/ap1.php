@@ -1,6 +1,7 @@
+
 <?php
 require_once('../../core/helpers/dashboard.php');
-Dashboard::headerTemplate('Administrar carreras');
+Dashboard::headerTemplate('Aspirantes en proceso');
 ?>
 <div class="row">
     <!-- Formulario de búsqueda -->
@@ -25,8 +26,8 @@ Dashboard::headerTemplate('Administrar carreras');
 <table class="highlight">
     <thead>
         <tr>
-            <th>Nombre de la carrera</th>
-            <th>Descripción</th>
+            <th>Nombre de la institución</th>
+            <th>Dirección del lugar</th>
             <th>Acción</th>
         </tr>
     </thead>
@@ -84,5 +85,5 @@ Dashboard::headerTemplate('Administrar carreras');
     </div>
 </div>
 <?php
-Dashboard::footerTemplate('categorias.js');
+Dashboard::footerTemplate('ap1.js');
 ?>

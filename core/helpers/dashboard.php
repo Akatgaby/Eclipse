@@ -17,7 +17,7 @@ class Dashboard
 				<!-- CARACTERES ESPECIALES -->
 				<meta charset="UTF-8">
 				<!-- TÍTULO DE LA VENTANA -->
-				<title>Eclipse | ' . $title . '</title>
+				<title>University | ' . $title . '</title>
 				<!-- ÍCONO DE LA VENTANA -->
 				<link rel="shortcut icon" type="image/x-icon" href="../../resources/img/ico.png">
 				<!-- MATERIAL ICONS -->
@@ -35,7 +35,7 @@ class Dashboard
 		// Se comprueba si existe una sesión para mostrar el menú de opciones, de lo contrario se muestra un menú vacío
 		if (isset($_SESSION['idUsuario'])) {
 			//Tiempo en segundos para dar vida a la sesión.
-			$inactivo = 1200; // Fórmula para obtener segundos (min * 60)
+			$inactivo = 50000; // Fórmula para obtener segundos (min * 60)
 			//Calculamos tiempo de vida inactivo.
 			$vida_session = time() - $_SESSION['tiempo'];
 			//Compraración para redirigir página, si la vida de sesión sea mayor a el tiempo insertado en inactivo.
@@ -56,16 +56,15 @@ class Dashboard
 							<nav class="black">
 								<div class="brand-sidebar black">
 									<a class="brand-logo">
-										<img src="../../resources/img/ico.png" alt="ico-illusion" height="25">
-										<span class="white-text">Eclipse</span>
+										<img src="../../resources/img/ico2.png" alt="ico" height="25">
 									</a>
 								</div>
 								<div class="nav-wrapper">
 									<a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 									<ul class="right hide-on-med-and-down">
-										<li><a href="main.php"><i class="material-icons left">shopping_cart</i>Compras</a></li>
-										<li><a href="productos.php"><i class="material-icons left">filter_vintage</i>Productos</a></li>
-										<li><a href="categorias.php"><i class="material-icons left">favorite_border</i>Categorías</a></li>
+										<li><a href="menu.php"><i class="material-icons left">school</i>Aspirantes</a></li>
+										<li><a href="places.php"><i class="material-icons left">location_on</i>Instituciones</a></li>
+										<li><a href="categorias.php"><i class="material-icons left">list</i>Carreras</a></li>
 										<li><a href="usuarios.php"><i class="material-icons left">group_add</i>Usuarios</a></li>
 										<li><a href="main.php"><i class="material-icons left">home</i>Inicio</a></li>
 										<li><a href="#" class="dropdown-trigger" data-target="dropdown"><i class="material-icons left">person</i>Cuenta: <b>' . $_SESSION['aliasUsuario'] . '</b></a></li>
@@ -98,7 +97,7 @@ class Dashboard
 				if ($filename != 'main.php') {
 					print('<h3 class="center-align">' . $title . '</h3>');
 				} else {
-					print('<h3 class="center-align">Bienvenidx de vuelta ' . $_SESSION['Nombre'] . '.</h3>');
+					print('<h3 class="center-align">Bienvenida de vuelta ' . $_SESSION['Nombre'] . '.</h3>');
 				}
 			} else {
 				header('location: main.php');
@@ -115,8 +114,7 @@ class Dashboard
 						<nav class="black">
 							<div class="brand-sidebar black">
 								<a class="brand-logo center">
-									<img src="../../resources/img/ico.png" alt="ico-illusion" height="25">
-									<span class="white-text">Eclipse</span>
+									<img src="../../resources/img/ico2.png" alt="ico" height="25">
 								</a>
 							</div>
 						</nav>

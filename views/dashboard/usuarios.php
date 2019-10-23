@@ -11,12 +11,12 @@ Dashboard::headerTemplate('Administrar usuarios');
             <label for="buscar">Buscador</label>
         </div>
         <div class="input-field col s6 m4">
-            <button type="submit" class="btn-floating btn waves-effect waves-light green"><i class="material-icons">check</i></button>
+            <button type="submit" class="btn-floating btn waves-effect waves-light light-green"><i class="material-icons">check</i></button>
         </div>
     </form>
     <!-- Botón para abrir ventana de nuevo registro -->
     <div class="input-field center-align col s12 m4">
-        <a href="#modal-create" class="btn-floating btn waves-effect waves-light red lighten-3 tooltipped modal-trigger" data-position="left" data-tooltip="Agregar nuevo administrador">
+        <a href="#modal-create" class="btn-floating btn waves-effect waves-light blue lighten-3 tooltipped modal-trigger" data-position="left" data-tooltip="Agregar nuevo administrador">
             <i class="material-icons">add</i>
         </a>
     </div>

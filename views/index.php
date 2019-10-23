@@ -1,168 +1,127 @@
 <!DOCTYPE html>
-<!-- IDIOMA DE LA PÁGINA -->
-<html lang="es">
-    <head>
-        <!-- BEGIN: Head -->
-        <!-- CARACTERES ESPECIALES -->
-        <meta charset="UTF-8">
-        <!-- TÍTULO DE LA VENTANA -->
-        <title>Eclipse | Inicio</title>
-        <!-- ÍCONO DE LA VENTANA -->
-        <link rel="shortcut icon" type="image/x-icon" href="../resources/img/ico.png">
-        <!-- MATERIAL ICONS -->
-        <link rel="stylesheet" type="text/css" href="../resources/css/material-icons.css">
-        <!-- MATERIALIZE.MIN -->
-        <link rel="stylesheet" type="text/css" href="../resources/css/materialize.min.css">
-        <!-- FUENTE -->
-        <link rel="stylesheet" type="text/css" href="../resources/css/font.css">
-        <!-- END: Head-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+<html lang="en">
 
-    <!-- BEGIN: Navbar -->
-        <header>
-            <div class="navbar-fixed">
-                <nav class="black">
-                    <div class="brand-sidebar black">
-                        <a class="brand-logo center">
-                            <img src="../resources/img/ico.png" alt="icon" height="25">
-                            <span class="white-text">Eclipse</span>
-                        </a>
-                        <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li>
-                                <a href="feed/register.php">Registrate</a>
-                            </li>
-                            <li>
-                                <a href="feed/index.php">Inicia sesión</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </header>
-    <!-- END: Navbar -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Monsters University</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../resources/img/ico.png">
+    <link rel="stylesheet" type="text/css" href="../resources/css/font.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/material-icons.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/aki.css">
+</head>
 
-    <body>
-    <!-- BEGIN: Carousel -->
-        <div class="slider">
-            <ul class="slides">
+<body class="cyan lighten-5">
+    <nav class="white">
+        <div class="nav-wrapper">
+            <ul>
                 <li>
-                    <img src="../resources/img/feed/O1.png">
-                    <div class="caption center-align">
-                    </div>
+                    <a href="feed/index.php" class="middle black-text"> <i class="material-icons left">near_me</i> Iniciar sesión</a>
                 </li>
                 <li>
-                    <img src="../resources/img/feed/O2.png">
-                    <div class="caption center-align">
-                    </div>
+                    <a href="feed/register.php" class="middle black-text"> <i class="material-icons left">supervisor_account</i> Registrarme</a>
                 </li>
                 <li>
-                    <img src="../resources/img/feed/O3.png">
-                    <div class="caption center-align">
-                    </div>
+                    <a href="#" class="middle black-text"> <i class="material-icons left">school</i>Acerca de</a>
                 </li>
             </ul>
         </div>
-    <!-- END: Carousel -->
+    </nav>
 
-    <h4 class="center">Acerca de</h4>
-
-    <!-- BEGIN: Who -->
-        <div class="container">
+    <body>
+        <div class="card">
+            <div class="card-image">
+                <img src="../resources/img/O1.png" class="animated fadeIn">
+            </div>
+        </div>
+        <div class="row">
+            <div class="center">
+                <span class="website-service">Bienvenido a nuestra página oficial</span>
+            </div>
             <div class="row">
-                <div class="card col s12 m6 l4">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="../resources/img/feed/plants-O1.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Precios de temporada</span>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Nuevos precios<i class="material-icons right">close</i></span>
-                        <p>Comienzan las fechas importantes de descuentos en tiendas en línea. Es una empresa que ha fusionado una excelente cadena logística para brindarle la forma más segura de realizar sus Compras por Internet. Con 15 años de experiencia en tecnología de Internet y el mejor servicio al cliente</p>
-                    </div>
-                </div>
-                <div class="card col s12 m6 l4">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="../resources/img/feed/plants-O2.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Buen servicio</span>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Compra en línea<i class="material-icons right">close</i></span>
-                        <p>Pague lo que es debido sin cargos adicionales, hacemos sus calculos en base a su mercadería sin costos adicionales. Reciba sus paquetes en tiempo record en la puerta de su casa u oficina. </p>
+                <div class="col s12 m6" id="content-information">
+                    <div class="center">
+                        <span>
+                            <div class="chip blue white-text" id="chip-information">Oferta académica</div>
+                        </span>
+                        <div class="row" id="objectives">
+                            <div class="col s12 m6 offset-m3">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="center">
+                                            <i class="material-icons">bookmark_border</i>
+                                        </div>
+                                        <span class="black-text">Explora las carreras que tenemos disponibles para los estudiates que deseen aplicar.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card col s12 m6 l4">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="../resources/img/feed/plants-O3.jpg">
+                <div class="col s12 m6" id="content-information">
+                    <div class="center">
+                        <span>
+                            <div class="chip blue white-text" id="chip-information">Servicios</div>
+                        </span>
+                        <div class="row" id="objectives">
+                            <div class="col s12 m6 offset-m3">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="center">
+                                            <i class="material-icons">computer</i>
+                                        </div>
+                                        <span class="black-text">La universidad realiza una labor orientada a despertar y promover el desarrollo integral de la persona.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Seguridad</span>
+                </div>
+                <div class="col s12 m6" id="content-information">
+                    <div class="center">
+                        <span>
+                            <div class="chip blue white-text" id="chip-information">Estudiantes</div>
+                        </span>
+                        <div class="row" id="objectives">
+                            <div class="col s12 m6 offset-m3">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="center">
+                                            <i class="material-icons">school</i>
+                                        </div>
+                                        <span class="black-text">En cada opción cuentan con los conocimientos, habilidades y actitudes básicas que le permiten insertarse al campo laboral respectivo.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Sin sorpresas<i class="material-icons right">close</i></span>
-                        <p>Puede realizar sus pagos locales con deposito bancario, cobro a domicilio o en línea, como usted lo prefiera. Hemos puesto a su disposición un excelente servicio que integra todo lo que usted necesita en una sola transacción, lo invitamos a que nos contacte y compre todo lo que necesita por Internet desde El Salvador.</p>
+                </div>
+                <div class="col s12 m6" id="content-information">
+                    <div class="center">
+                        <span>
+                            <div class="chip blue white-text" id="chip-information">Nuevo ingreso</div>
+                        </span>
+                        <div class="row" id="objectives">
+                            <div class="col s12 m6 offset-m3">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="center">
+                                            <i class="material-icons">group_add</i>
+                                        </div>
+                                        <span>A los nuevos postulantes poder realizar el proceso de registro para agilizar la inscripción a las diferentes carreras que ofrecemos.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    <!-- END: Who-->
-
-    <!-- BEGIN: Acerca de -->
-        <div class="row">
-            <div class="col s12">
-                <div class="card light-green accent-1">
-                    <div class="card-content black-text">
-                        <span class="card-title">Nuestra misión. 🦚</span>
-                        <p>Superar las expectativas de nuestros clientes, brindándoles la mejor experiencia de compra, creando valor para nuestros colaboradores, accionistas y proveedores, con responsabilidad social y la comodidad en línea.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <div class="card light-green accent-1">
-                    <div class="card-content black-text">
-                        <span class="card-title">Nuestra visión. 🦚</span>
-                        <p>Ser el Grupo detallista líder e innovador en los mercados donde operemos, diferenciándonos por ofrecer las últimas tendencias, un servicio extraordinario y siempre fieles a nuestros valores.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <!-- END: Acerca de -->
-
-    <!-- BEGIN: Footer -->
-        <footer class="page-footer grey darken-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col 16 s12">
-                        <h5 class="white-text">Eclipse: The magic garden. 🌷</h5>
-                        <p class="grey-text text-lighten-4">Venta de plantas de todo tipo ¡Y mucho más!</p>
-                    </div>
-                    <div class="col l4 offset-l2 s12">
-                        <h5 class="white-text">¡Contáctanos!</h5>
-                        <ul>
-                            <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/">Facebook</a></li>
-                            <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/">Instagram</a></li>
-                            <li><a class="grey-text text-lighten-3" href="https://www.twitter.com/">Twitter</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-copyright black">
-                <div class="container">
-                © 2019 Copyright Eclipse
-                <a class="grey-text text-lighten-4 right">Todos los derechos reservados. 🌷</a>
-                </div>
-            </div>
-        </footer>
-    <!-- END: Footer -->
-    
-    <!-- SCRIPTS -->
-        <script src="../libraries/jquery-3.2.1.min.js" type="text/javascript"></script>
-        <script src="../libraries/materialize.min.js" type="text/javascript"></script>
-        <script src="../resources/js/init-slider.js" type="text/javascript"></script>
     </body>
+    <script src="../libraries/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="../libraries/materialize.min.js" type="text/javascript"></script>
+</body>
+
 </html>
