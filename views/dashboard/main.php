@@ -3,10 +3,9 @@ require_once('../../core/helpers/dashboard.php');
 Dashboard::headerTemplate('Bienvenido');
 ?>
 <div class="row">
-    <h4 class="center-align green-text" id="greeting"></h4>
+    <h4 class="center-align blue-text" id="greeting"></h4>
 </div>
 <!-- BEGIN: Carousel -->
-
         <h6 class="center-align black-text">Presione el botón verde de la esquina para consultar las estadísticas del sistema.</h6>
         <div class="carousel">
             <a class="carousel-item" href="#one!"><img src="../../resources/img/flowers/O1.jpg"></a>
@@ -25,14 +24,14 @@ Dashboard::headerTemplate('Bienvenido');
 
 <!-- BEGIN: Profile Button -->
 <div class="fixed-action-btn">
-    <a class="btn-floating btn-large light-green tooltipped" data-position="left" data-tooltip="Gráficos y reportes">
+    <a class="btn-floating btn-large light-green tooltipped" data-position="left" data-tooltip="Reportes">
         <i class="large material-icons">content_paste</i>
     </a>
     <ul>
-        <li><a href="" class="btn-floating red lighten-4 tooltipped" data-position="top" data-tooltip="Facturas"><i class="material-icons">free_breakfast</i></a></li>
-        <li><a href="" class="btn-floating red lighten-3 tooltipped" data-position="top" data-tooltip="Ventas"><i class="material-icons">gesture</i></a></li>
-        <li><a href="graficos.php" class="btn-floating red lighten-2 tooltipped" data-position="top" data-tooltip="Productos"><i class="material-icons">grade</i></a></li>
-        <li><a href="" class="btn-floating red lighten-1 tooltipped" data-position="top" data-tooltip="Reportes"><i class="material-icons">insert_drive_file</i></a></li>
+        <li><a href="" class="btn-floating blue lighten-4"><i class="material-icons">free_breakfast</i></a></li>
+        <li><a href="" class="btn-floating blue lighten-3"><i class="material-icons">gesture</i></a></li>
+        <li><a href="" class="btn-floating blue lighten-2 tooltipped" data-position="top" data-tooltip="Postulante por school"><i class="material-icons">grade</i></a></li>
+        <li><a href="" class="btn-floating blue lighten-1 tooltipped" data-position="top" data-tooltip="Postulantes por carrera"><i class="material-icons">insert_drive_file</i></a></li>
     </ul>
 </div>
 <!-- END: Profile Button -->
